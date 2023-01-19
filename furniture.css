@@ -1,0 +1,92 @@
+.furniture {
+  width: 100%;
+ border-bottom: 1px solid rgb(156, 144, 144);
+}
+
+.furnituremenu {
+  height: 45vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  border-bottom: 1px grey;
+}
+.furnituremenu h2,p,tables{
+  margin-bottom: 0px;
+}
+.tables {
+  margin: -30px;
+  padding:0;
+  margin: auto;
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.tables img{
+  margin: 0;
+  padding: 0;;
+  width: 70%;
+}
+
+.productsmenu{
+  width:80%;
+  margin:auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:30px;
+}
+.productsmenu p{
+  padding:10px;
+}
+.products{
+
+ border-radius: 5px;
+ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+}
+.products:hover{
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.products img{
+width:100%;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+.products p{
+  margin:0;
+  padding:5px;
+  text-align: center;
+}
+
+.price{
+  color:rgb(240, 111, 63);
+  margin: 3px;
+  padding:5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.discount{
+  padding:5px;
+  color:green;
+}
+.button{
+  display: flex;
+  justify-content: space-between;
+}
+.button>button{
+  border:none;
+}
+.button>button:nth-child(1){
+  margin-left: 20px;
+  margin-bottom: 8px;
+  background-color: rgb(236, 72, 63);
+  color:white;
+  border-radius: 5px;
+}
+.button>button:nth-child(2){
+  background-color: transparent;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
