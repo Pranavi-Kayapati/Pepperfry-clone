@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
   <link rel="stylesheet" href="index.css" />
   <title>Pepperfry</title>
 </head>
@@ -55,13 +56,27 @@
         <li><a class="menu" href="furniture.html">Modular</a></li>
       </ul>
     </div>
+    <div class="body">
     <div class="slide">
-      <a href="furniture.html">
-        <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Hp_section2_web_04012023_3.jpg" alt="" />
-      </a>
+     
+        <div class="gallery js-flickity" data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
+          <img class="gallery-cell" src="https://ii1.pepperfry.com/media/wysiwyg/banners/Web_Promo_2x_1601_ND.jpg"
+            alt="">
+          <img class="gallery-cell" src="https://ii2.pepperfry.com/media/wysiwyg/banners/Hp_section2_web_04012023_1.jpg"
+            alt="">
+          <img class="gallery-cell" src="https://ii3.pepperfry.com/media/wysiwyg/banners/Hp_section2_web_04012023_2.jpg"
+            alt="">
+          <img class="gallery-cell" src="https://ii1.pepperfry.com/media/wysiwyg/banners/Hp_section2_web_04012023_3.jpg"
+            alt="">
+        </div>
+      
+      
+    </div>
+    <div class="gallery2">
       <a href="furniture.html">
         <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/RHS-WEB_2x_1301_16-jan.jpg" alt="" />
       </a>
+    </div> 
     </div>
 
     <div class="underslide">
@@ -353,23 +368,24 @@
         <img src="/rupay.png" alt="">
         <img src="/club.png" alt="">
         <img src="/wallet.png" alt="">
-        <img src="/internetbanking.png" alt="">
+        <!-- <img src="/internetbanking.png" alt=""> -->
       </div>
     </div>
-      <div class="innerfooter">
-        <p>Like what you see? You'll like us even more here</p>
-        <div class="socialdiv">
-          <div class="social"><img src="/facebook.png" alt=""></div>
-          <div class="social"><img src="/twitter.png" alt=""></div>
-          <div class="social"><img src="/youtube.png" alt=""></div>
-          <div class="social"><img src="/insta.png" alt=""></div>
-          <div class="social"><img src="/linkedin.png" alt=""></div>
-          <div class="social"><img src="/pinterest.png" alt=""></div>
-        </div>
+    <div class="innerfooter">
+      <p>Like what you see? You'll like us even more here</p>
+      <div class="socialdiv">
+        <div class="social"><img src="/facebook.png" alt=""></div>
+        <div class="social"><img src="/twitter.png" alt=""></div>
+        <div class="social"><img src="/youtube.png" alt=""></div>
+        <div class="social"><img src="/insta.png" alt=""></div>
+        <div class="social"><img src="/linkedin.png" alt=""></div>
+        <div class="social"><img src="/pinterest.png" alt=""></div>
       </div>
-    
+    </div>
+
   </div>
 </body>
 <script src="index.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 
 </html>
