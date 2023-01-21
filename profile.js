@@ -33,17 +33,21 @@ signUp.addEventListener("click", () => {
   }
 });
 
-let inEmail = document.getElementById("signinemail").value;
-let inPassword = document.getElementById("signinpassword").value;
 
 signIn.addEventListener("click", () => {
-  let userloggedIn;
+  // let userloggedIn;
+  let inEmail = document.getElementById("signinemail").value;
+let inPassword = document.getElementById("signinpassword").value;
+
+  console.log(signUpData)
+  console.log(inEmail,inPassword)
   let user = signUpData.find(
     (data) => data.email === inEmail && data.password === inPassword
   );
-  location.replace("index.html");
   if (user) {
+    localStorage.setItem("isloggedIn",true)
     alert("Loggedin Sucessfully");
+
     location.replace("index.html");
   } else {
     alert("incorrect email or password");

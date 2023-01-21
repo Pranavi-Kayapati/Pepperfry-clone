@@ -220,3 +220,34 @@ let data=[
 // }
 // console.log(pData)
 localStorage.setItem("data",JSON.stringify(data))
+let menu=document.querySelector(".menu");
+// menu.addEventListener("mouseover",()=>{
+// let div=document.createElement("div")
+// let ul=document.createElement("ul");
+// let li1=document.createElement("li")
+// li1.textContent="Study Tables"
+// let li2=document.createElement("li")
+// li2.textContent="Sofas"
+// let li3=document.createElement("li")
+// li3.textContent="Home Decor"
+// let li4=document.createElement("li")
+// li4.textContent="Dining Area"
+// ul.append(li1,li2,li3,li4)
+// div.append(ul);
+// })
+let searchbtn=document.querySelector(".search-btn")
+searchbtn.addEventListener("click",function (){
+  let value=document.querySelector(".search-input").value;
+  let filtered=data.filter(item=>item.desc.includes(value))
+  // console.log(filtered)
+  localStorage.setItem("flag",value)
+  location.replace("furniture.html")
+})
+
+// window.addEventListener("load",()=>{
+//   setTimeout(function(){
+//     alert("Please Login")
+//   },5000)
+//   location.replace("profile.html")
+// })
+
