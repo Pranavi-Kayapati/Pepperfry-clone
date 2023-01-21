@@ -2,26 +2,27 @@
 
 * {
     box-sizing: border-box;
+    font-size: 20px;
 }
-
+body{
+    width:90%;
+    margin:auto;
+}
 
 .profile{
   width: 70%;
   margin:auto;
 }
-.display{
-  margin-bottom: 50px;
-}
 
 .body {
-  width: 100%;
-  background-image: url(/background.png);
+  background-image: url(/assets/background.png);
   height: 100%;
+  padding: 50px;
   /* opacity: 0.6; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: black;
+  background-color: url(index.html);
 }
 
 h1 {

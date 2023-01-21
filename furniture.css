@@ -81,8 +81,8 @@ border-top-right-radius: 5px;
 .button>button:nth-child(1){
   margin-left: 20px;
   margin-bottom: 8px;
-  background-color: rgb(236, 72, 63);
-  color:white;
+  background-color: rgb(144, 147, 147);
+  color:rgb(4, 4, 4);
   border-radius: 5px;
 }
 .button>button:nth-child(2){
