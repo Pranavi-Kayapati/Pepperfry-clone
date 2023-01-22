@@ -6,7 +6,6 @@
 }
 
 #nav {
-  
   margin-left: 40px;
   margin-right: 40px;
   display: flex;
@@ -118,10 +117,10 @@
   width: 70%;
   display: flex;
 }
-.slide div:nth-child(1){
-  width:100%;
+.slide div:nth-child(1) {
+  width: 100%;
 }
-.slide div:nth-child(2){
+.slide div:nth-child(2) {
   width: 20%;
 }
 .underslide > img {
@@ -163,7 +162,7 @@
 .footer div {
   padding: 10px;
 }
-.bottom{
+.bottom {
   display: flex;
 }
 .footer p {
@@ -175,45 +174,45 @@
   border-radius: 7px;
 }
 .cards {
-  width:100%;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(6,1fr);
-  gap:10px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
 }
 .cards > img {
   width: 100%;
   padding: 5px;
 }
-.bottom{
-  margin:0;
-  padding:0;
-  width:100%;
-  display:flex;
-}
-.socialdiv{
-  padding:0;
-  display: grid;
-  grid-template-columns: repeat(6,1fr);
-  gap:10px;
-  width:50px;
-}
-.socialdiv img{
-  width:40px;
-}
-.body{
+.bottom {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  margin:auto;
+  display: flex;
+}
+.socialdiv {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  width: 50px;
+}
+.socialdiv img {
+  width: 40px;
+}
+.body {
+  width: 100%;
+  margin: auto;
   display: flex;
   justify-content: center;
 }
 .gallery {
   /* width: 70%; */
-  background: #EEE;
+  background: #eee;
 }
-.gallery2{
+.gallery2 {
   width: 23%;
 }
-.gallery2 img{
+.gallery2 img {
   width: 100%;
 }
 
@@ -223,4 +222,11 @@
   background: #8C8;
   counter-increment: gallery-cell; */
 }
-
+@media screen and (min-width: 700px) and (max-width: 200px) {
+  .roomimg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: auto;
+  }
+}

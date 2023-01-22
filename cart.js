@@ -4,7 +4,13 @@ let cartitems = document.querySelector(".productsmenu");
 
 // console.log(cartData);
 
-window.addEventListener("load", () => displayCart());
+window.addEventListener("load", () => {
+  displayCart();
+  let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+  if (cartData.length) {
+    totalPrice();
+  }
+});
 
 function displayCart() {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
@@ -54,12 +60,19 @@ function displayCart() {
         incDec("-", ele.id);
       }
     });
-// let totalCart=document.createElement("h1");
-// totalCart.textContent=`₹${ele.price*ele.quantity}`
-// let totalPrice=document.createElement("p");
-// totalPrice.textContent=`₹${ele.price*ele.quantity}`
-// totalCart.append(totalPrice)
-quantity.append(inc, tot, dec);
+    // let checkout = document.createElement("div");
+    // let orderDetails = document.createElement("h4");
+    // orderDetails.textContent = "Your Order Details";
+    // let totalProducts = document.createElement("h5");
+    // totalProducts.textContent = cartData.length;
+    // let placeOrder = document.createElement("button");
+    // placeOrder.textContent = "place Order";
+    // let totalCart=document.createElement("h1");
+    // totalCart.textContent=`₹${ele.price*ele.quantity}`
+    // let totalPrice=document.createElement("p");
+    // totalPrice.textContent=`₹${ele.price*ele.quantity}`
+    // totalCart.append(totalPrice)
+    quantity.append(inc, tot, dec);
     buttondiv.append(remove, like);
     card.append(img, desc, company, price, discount, buttondiv, quantity);
     cartitems.append(card);
@@ -80,6 +93,7 @@ function incDec(type, id) {
   cartData[index] = product;
   localStorage.setItem("cartData", JSON.stringify(cartData));
   displayCart();
+  totalPrice();
 }
 
 function removeItem(id) {
@@ -88,12 +102,59 @@ function removeItem(id) {
   let filterData = cartData.filter((data) => id !== data.id);
   localStorage.setItem("cartData", JSON.stringify(filterData));
   displayCart();
+  totalPrice();
 }
 
-function totalPrice(){
+function totalPrice() {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
-for(let i=0; i<cartData.length;i++){
-  let h1=document.createElement("h1");
-  h1.textContent=cartData[i].price*cartData[i].quantity;
+  let totalCartPrice = 0;
+  let checkout = document.createElement("div");
+  checkout.className = "checkout";
+  let orderDetails = document.createElement("h4");
+  orderDetails.textContent = "Your Order Details";
+  let totalProducts = document.createElement("h5");
+  totalProducts.textContent = "Total Products" + "-" + cartData.length;
+  let placeOrder = document.createElement("button");
+  placeOrder.id = "placeOrder";
+  placeOrder.setAttribute("data-bs-toggle", "modal");
+  placeOrder.setAttribute("data-bs-target", "#placeOrder");
+  placeOrder.textContent = "place Order";
+  placeOrder.style =
+    "border:none;padding:5px;border-radius:5px;background-color:orange;font-size:18px";
+  placeOrder.addEventListener("click", () => {
+    const flag = localStorage.getItem("flag");
+    if (flag == "true") {
+      placeOrder.textContent = "Ordered";
+      placeOrder.style = "background-color:green";
+      localStorage.removeItem("flag");
+    }
+  });
+  let h1 = document.createElement("h5");
+  for (let i = 0; i < cartData.length; i++) {
+    totalCartPrice += cartData[i].price * cartData[i].quantity;
+  }
+  h1.textContent = "Your Total Cart Price" + "-" + `₹ ${totalCartPrice}`;
+  checkout.append(orderDetails, totalProducts, h1, placeOrder);
+  cartitems.append(checkout);
+  // checkout.insertBefore(cartitems);
 }
+
+function placeOrder() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let number = document.getElementById("number").value;
+  let address = document.getElementById("address").value;
+  let location = document.getElementById("location").value;
+  if (
+    name == "" ||
+    email == "" ||
+    number == "" ||
+    address == "" ||
+    location == ""
+  ) {
+    alert("Please Enter Required Details");
+  } else {
+    localStorage.setItem("flag", true);
+    alert("Ordered Sucessfully");
+  }
 }

@@ -1,130 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pride Homes</title>
-  <link rel="stylesheet" href="fav-cart.css">
-  <link rel="stylesheet" href="index.css" />
-</head>
-<body>
-  <!-- this is header -->
-  <div id="nav">
-    <a href="index.html">
-      <img class="logo" style="mix-blend-mode: color-burn" src="/assets/logo2.png" alt="logo image" />
-    </a>
-
-    <div class="left">
-      <input class="search-input" type="text" placeholder="Search something.." />
-
-      <button class="search-btn"><i class="fas fa-search"></i></button>
-      <script src="https://kit.fontawesome.com/d97b87339f.js" crossorigin="anonymous"></script>
-    </div>
-    <div class="right">
-      <a href="profile.html">
-        <img class="profile"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ97254k-nvjiPoKpQLU7xqdRmWKeeGqKPuVVJE2Cp6ir71teYkA1P6bTNA5e-Owfdl-nk&usqp=CAU"
-          alt="profile image" />
-      </a>
-
-      <a href="favorite.html">
-        <img class="favorites"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5u-XY9NWomDy1ZaDGjzhjEnVS1B1H9XUOAS1nfbcePzLwbT8OwqOB2R8TMaM-kQUEQbI&usqp=CAU"
-          alt="favorites" />
-      </a>
-      <a href="cart.html">
-        <img class="cart"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSblGiUFFJlyg_81BPr4FxJMn1lzPElspob_w&usqp=CAU"
-          alt="cart" />
-      </a>
-    </div>
-  </div>
-  <!-- this is menu bar -->
-  <div class="display">
-    <ul>
-      <li><a class="menu" href="furniture.html">Furniture</a></li>
-      <li><a class="menu" href="furniture.html">Mattresses</a></li>
-
-      <li><a class="menu" href="furniture.html">Home decor</a></li>
-      <li><a class="menu" href="furniture.html">Lighting</a></li>
-      <li><a class="menu" href="furniture.html">Kitchen & Dining</a></li>
-      <li><a class="menu" href="furniture.html">Furnishings</a></li>
-      <li><a class="menu" href="furniture.html">Appliances</a></li>
-      <li><a class="menu" href="furniture.html">Pets</a></li>
-      <li><a class="menu" href="furniture.html">Modular</a></li>
-    </ul>
-  </div>
-  <div class="productsmenu"></div>
-  <!-- this is footer -->
-  <div class="footer">
-    <div class="innerfooter">
-      <div>
-        <p>Useful Links</p>
-        <p class="grey">About Us</p>
-        <p class="grey">Our Blog</p>
-        <p class="grey">Careers</p>
-        <p class="grey">Corporate Governance</p>
-        <p class="grey">Pepperfry In the News</p>
-        <p class="grey">Find A Studio</p>
-        <p class="grey">Gift Cards</p>
-        <p class="grey">Brands</p>
-        <p class="grey">About Us</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pride Homes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="fav-cart.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="placeOrder"
+      aria-labelledby="placeOrder"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Please fill the following details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="name" placeholder="Name" />
+            <input type="email" id="email" placeholder="Email" />
+            <input type="number" id="number" placeholder="Mobile Number" />;
+            <input type="text-area" id="address" placeholder="Address" />
+            <input type="text" id="location" placeholder="Near by location" />
+          </div>
+          <div class="modal-footer">
+            <!-- <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button> -->
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="btn btn-primary"
+              onclick="placeOrder()"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="innerfooter">
-      <p>Partners</p>
-      <p class="grey">Sell With Us</p>
-      <p class="grey"> Become a Franchisee</p>
-      <p class="grey"> Become a Pep Homie</p>
-      <p class="grey">Design For Us</p>
-      <p class="grey">Pepperfry Marketplace Policies</p>
-      <p class="grey">Login to Your Merchant</p>
-      <p class="grey">Dashboard</p>
-      <p class="grey">Important:GST and You</p>
-      <p class="grey">Corporate Enquiries</p>
-    </div>
-    <div class="innerfooter">
-      <p>Need Help?</p>
-      <p class="grey">Contact Us</p>
-      <p class="grey">Return & Refund</p>
-      <p class="grey">Track Your Order</p>
-      <p class="grey">FAQs</p>
-      <p class="grey">Buy on Phone</p>
-    </div>
-    <div class="innerfooter">
-      <p>Download App</p>
-      <img src="/apple.png" alt="">
-      <img src="/playstore.png" alt="">
-    </div>
-  </div>
-  <div class="footer bottom">
-    <div class="innerfooter">
-      <p>We accept</p>
-      <div class="cards">
-        <img src="/assets/visa.png" alt="">
-        <img src="/assets/mastercard.png" alt="">
-        <img src="/assets/maestro.png" alt="">
-        <img src="/assets/american.png" alt="">
-        <img src="/assets/rupay.png" alt="">
-        <img src="/assets/club.png" alt="">
-        <img src="/assets/wallet.png" alt="">
-        <img src="/assets/internetbanking.png" alt="">
+    <!-- this is header -->
+    <div id="nav">
+      <a href="index.html">
+        <img
+          class="logo"
+          style="mix-blend-mode: color-burn"
+          src="/assets/logo2.png"
+          alt="logo image"
+        />
+      </a>
+
+      <div class="left">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search something.."
+        />
+
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+        <script
+          src="https://kit.fontawesome.com/d97b87339f.js"
+          crossorigin="anonymous"
+        ></script>
+      </div>
+      <div class="right">
+        <a href="profile.html">
+          <img
+            class="profile"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ97254k-nvjiPoKpQLU7xqdRmWKeeGqKPuVVJE2Cp6ir71teYkA1P6bTNA5e-Owfdl-nk&usqp=CAU"
+            alt="profile image"
+          />
+        </a>
+
+        <a href="favorite.html">
+          <img
+            class="favorites"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5u-XY9NWomDy1ZaDGjzhjEnVS1B1H9XUOAS1nfbcePzLwbT8OwqOB2R8TMaM-kQUEQbI&usqp=CAU"
+            alt="favorites"
+          />
+        </a>
+        <a href="cart.html">
+          <img
+            class="cart"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSblGiUFFJlyg_81BPr4FxJMn1lzPElspob_w&usqp=CAU"
+            alt="cart"
+          />
+        </a>
       </div>
     </div>
+    <!-- this is menu bar -->
+    <div class="display">
+      <ul>
+        <li><a class="menu" href="furniture.html">Furniture</a></li>
+        <li><a class="menu" href="furniture.html">Mattresses</a></li>
+
+        <li><a class="menu" href="furniture.html">Home decor</a></li>
+        <li><a class="menu" href="furniture.html">Lighting</a></li>
+        <li><a class="menu" href="furniture.html">Kitchen & Dining</a></li>
+        <li><a class="menu" href="furniture.html">Furnishings</a></li>
+        <li><a class="menu" href="furniture.html">Appliances</a></li>
+        <li><a class="menu" href="furniture.html">Pets</a></li>
+        <li><a class="menu" href="furniture.html">Modular</a></li>
+      </ul>
+    </div>
+    <div class="cart">
+      <div class="productsmenu"></div>
+    </div>
+    <!-- this is footer -->
+    <div class="footer">
+      <div class="innerfooter">
+        <div>
+          <p>Useful Links</p>
+          <p class="grey">About Us</p>
+          <p class="grey">Our Blog</p>
+          <p class="grey">Careers</p>
+          <p class="grey">Corporate Governance</p>
+          <p class="grey">Pepperfry In the News</p>
+          <p class="grey">Find A Studio</p>
+          <p class="grey">Gift Cards</p>
+          <p class="grey">Brands</p>
+          <p class="grey">About Us</p>
+        </div>
+      </div>
+      <div class="innerfooter">
+        <p>Partners</p>
+        <p class="grey">Sell With Us</p>
+        <p class="grey">Become a Franchisee</p>
+        <p class="grey">Become a Pep Homie</p>
+        <p class="grey">Design For Us</p>
+        <p class="grey">Pepperfry Marketplace Policies</p>
+        <p class="grey">Login to Your Merchant</p>
+        <p class="grey">Dashboard</p>
+        <p class="grey">Important:GST and You</p>
+        <p class="grey">Corporate Enquiries</p>
+      </div>
+      <div class="innerfooter">
+        <p>Need Help?</p>
+        <p class="grey">Contact Us</p>
+        <p class="grey">Return & Refund</p>
+        <p class="grey">Track Your Order</p>
+        <p class="grey">FAQs</p>
+        <p class="grey">Buy on Phone</p>
+      </div>
+      <div class="innerfooter">
+        <p>Download App</p>
+        <img src="/assets/apple.png" alt="" />
+        <img src="/assets/playstore.png" alt="" />
+      </div>
+    </div>
+    <div class="footer bottom">
+      <div class="innerfooter">
+        <p>We accept</p>
+        <div class="cards">
+          <img src="/assets/visa.png" alt="" />
+          <img src="/assets/mastercard.png" alt="" />
+          <img src="/assets/maestro.png" alt="" />
+          <img src="/assets/american.png" alt="" />
+          <img src="/assets/rupay.png" alt="" />
+          <img src="/assets/club.png" alt="" />
+          <img src="/assets/wallet.png" alt="" />
+          <!-- <img src="/assets/internetbanking.png" alt=""> -->
+        </div>
+      </div>
       <div class="innerfooter">
         <p>Like what you see? You'll like us even more here</p>
         <div class="socialdiv">
-          <div class="social"><img src="/assets/facebook.png" alt=""></div>
-          <div class="social"><img src="/assets/twitter.png" alt=""></div>
-          <div class="social"><img src="/assets/youtube.png" alt=""></div>
-          <div class="social"><img src="/assets/insta.png" alt=""></div>
-          <div class="social"><img src="/assets/linkedin.png" alt=""></div>
-          <div class="social"><img src="/assets/pinterest.png" alt=""></div>
+          <div class="social"><img src="/assets/facebook.png" alt="" /></div>
+          <div class="social"><img src="/assets/twitter.png" alt="" /></div>
+          <div class="social"><img src="/assets/youtube.png" alt="" /></div>
+          <div class="social"><img src="/assets/insta.png" alt="" /></div>
+          <div class="social"><img src="/assets/linkedin.png" alt="" /></div>
+          <div class="social"><img src="/assets/pinterest.png" alt="" /></div>
         </div>
       </div>
-    
-  </div>
-</body>
-<script src="cart.js"></script>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
+  <script src="cart.js"></script>
 </html>
