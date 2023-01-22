@@ -4,7 +4,13 @@ let cartitems = document.querySelector(".productsmenu");
 
 // console.log(cartData);
 
-window.addEventListener("load", () => displayCart());
+window.addEventListener("load", () => {
+  displayCart();
+  let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+  if (cartData.length) {
+    totalPrice();
+  }
+});
 
 function displayCart() {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
@@ -54,12 +60,12 @@ function displayCart() {
         incDec("-", ele.id);
       }
     });
-// let totalCart=document.createElement("h1");
-// totalCart.textContent=`₹${ele.price*ele.quantity}`
-// let totalPrice=document.createElement("p");
-// totalPrice.textContent=`₹${ele.price*ele.quantity}`
-// totalCart.append(totalPrice)
-quantity.append(inc, tot, dec);
+    // let totalCart=document.createElement("h1");
+    // totalCart.textContent=`₹${ele.price*ele.quantity}`
+    // let totalPrice=document.createElement("p");
+    // totalPrice.textContent=`₹${ele.price*ele.quantity}`
+    // totalCart.append(totalPrice)
+    quantity.append(inc, tot, dec);
     buttondiv.append(remove, like);
     card.append(img, desc, company, price, discount, buttondiv, quantity);
     cartitems.append(card);
@@ -80,6 +86,7 @@ function incDec(type, id) {
   cartData[index] = product;
   localStorage.setItem("cartData", JSON.stringify(cartData));
   displayCart();
+  totalPrice();
 }
 
 function removeItem(id) {
@@ -88,12 +95,16 @@ function removeItem(id) {
   let filterData = cartData.filter((data) => id !== data.id);
   localStorage.setItem("cartData", JSON.stringify(filterData));
   displayCart();
+  totalPrice();
 }
 
-function totalPrice(){
+function totalPrice() {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
-for(let i=0; i<cartData.length;i++){
-  let h1=document.createElement("h1");
-  h1.textContent=cartData[i].price*cartData[i].quantity;
-}
+  let totalCartPrice = 0;
+  let h1 = document.createElement("h1");
+  for (let i = 0; i < cartData.length; i++) {
+    totalCartPrice += cartData[i].price * cartData[i].quantity;
+  }
+  h1.textContent = totalCartPrice;
+  cartitems.append(h1);
 }
