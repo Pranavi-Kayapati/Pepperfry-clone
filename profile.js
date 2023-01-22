@@ -33,23 +33,53 @@ signUp.addEventListener("click", () => {
   }
 });
 
-
 signIn.addEventListener("click", () => {
-  // let userloggedIn;
   let inEmail = document.getElementById("signinemail").value;
-let inPassword = document.getElementById("signinpassword").value;
-
-  console.log(signUpData)
-  console.log(inEmail,inPassword)
+  let inPassword = document.getElementById("signinpassword").value;
   let user = signUpData.find(
     (data) => data.email === inEmail && data.password === inPassword
   );
   if (user) {
-    localStorage.setItem("isloggedIn",true)
+    localStorage.setItem("user", JSON.stringify(user.name));
     alert("Loggedin Sucessfully");
-
     location.replace("index.html");
   } else {
     alert("incorrect email or password");
+  }
+});
+
+window.addEventListener("load", () => {
+  let user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    console.log(user);
+    console.log(typeof user);
+    let profile = document.querySelector(".body");
+    let div = document.createElement("div");
+    div.className = "box";
+    let name = document.createElement("h3");
+    name.textContent = "Hey!" + " " + user + " " + "Welcome.";
+    let p = document.createElement("p");
+    p.textContent = "Pleace Click The Link To Find Products";
+    let furniture = document.createElement("p");
+    furniture.setAttribute = ("href", "https://www.w3schools.com");
+    furniture.style = "color:blue;font-size:18px";
+    let link1 = document.createTextNode("Furniture");
+    furniture.appendChild(link1);
+    let favorites = document.createElement("p");
+    favorites.setAttribute = ("href", "favurite.html");
+    favorites.textContent = "Favorites";
+    favorites.style = "color: blue;font-size:18px";
+    profile.innerHTML = "";
+    // profile.style.background = "none";
+    let logout = document.createElement("button");
+    logout.textContent = "log Out";
+    logout.addEventListener("click", () => {
+      localStorage.removeItem("user");
+      location.replace("profile.html");
+    });
+    div.append(name, p, furniture, favorites, logout);
+    profile.append(div);
+
+    // profile.append(div);
   }
 });

@@ -82,8 +82,8 @@ tables {
 .button > button:nth-child(1) {
   margin-left: 20px;
   margin-bottom: 8px;
-  background-color: rgb(144, 147, 147);
-  color: rgb(4, 4, 4);
+  background-color: rgb(232, 54, 0);
+  color: #fcfbfb;
   border-radius: 5px;
 }
 .button > button:nth-child(2) {
