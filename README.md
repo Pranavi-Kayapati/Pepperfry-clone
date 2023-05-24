@@ -2,6 +2,7 @@
 
 Pride Homes (Pepperfry Clone).
 Deployed Link: https://lucent-sherbet-5c135e.netlify.app/
+Description:-
 This project is a clone of the Pepperfry.com website, which is a well-known online furniture and home decor store. The purpose of this project is to recreate key features of Pepperfry.com, including a landing page, product page, favorite page, cart page, checkout page, and login page.
 
 Features
